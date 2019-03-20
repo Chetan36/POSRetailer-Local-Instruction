@@ -38,7 +38,7 @@ git clone https://github.com/Chetan36/POSRetailer-Local.git
 
 #Installation Process
 
-#4. check if mvn present else install
+#4. check if node present else install
 node -v
 rc=$?
 if [ $rc != 0 ] # Not Present
