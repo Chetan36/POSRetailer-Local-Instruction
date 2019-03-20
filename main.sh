@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CODE_DIR=$HOME/POS/code
+CODE_DIR=$HOME/POS
 #PRD_DIR=$HOME/POS/prd
 
 GIT_DIR=POSRetailer-Local
@@ -43,13 +43,18 @@ node -v
 rc=$?
 if [ $rc != 0 ] # Not Present
 then 
-	echo "maven not present. Installing maven ..."
+	echo "Node not present. Installing Node ..."
 	sudo apt-get install nodejs
 fi
 
 #i
-npm install -g pm2
-
+pm2 -v
+rc=$?
+if [ $rc != 0 ] # Not Present
+then 
+	echo "PM2 not present. Installing PM2 ..."
+	sudo npm install -g pm2
+fi
 
 #ii.. go to POSRetailer-Local folder
 cd $CODE_DIR/$GIT_DIR||exit
